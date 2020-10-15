@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+}
+
+h2.title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.body__app {
+  width: 100%;
+  height: calc( 100vh - 34px );
+}
+
+.app {
+  padding-top: 34px;
+  background: linear-gradient(90deg, rgba(187,11,163,1) 0%, rgba(115,0,255,1) 100%);
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.app__title {
+  text-align: center;
+  margin-bottom: 42px;
+  color: #fff;
+}
+
+
+.main-alist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-alist a {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+
+.main-alist a:hover {
+  border-bottom: 1px solid #fff;
+  transition: .3s;
+}
+
+.main-alist li:last-child {
+  margin-bottom: 0;
+}
+
+.list-albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.list-albums__item {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.list-albums__item img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.list-albums__item span {
+  color: #000;
+  font-family: sans-serif;
+  margin-top: 12px;
+}
+
+.list-albums__title {
+  margin-bottom: 12px;
+  width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  color: #000;
+}
+
+.app__link-prev {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  font-family: sans-serif;
+  width: min-content;
+  border-bottom: 1px solid transparent;
+  margin-right: 24px;
+  align-items: center;
+}
+
+.app__link-prev:before {
+  content: '➤';
+  display: flex;
+  margin-right: 12px;
+  color: #b218ce;
+  background: #fff;
+  min-width: 32px;
+  border-radius: 100%;
+  height: 32px;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.app__link-prev:hover:before {
+  color: #fff;
+  background: #b218ce;
+  transition: .3s;
+}
+
+.app__link-prev:after {
+  content: '|';
+  display: block;
+  margin-left: 12px;
+}
+
+.app__wrapper-title {
+  display: flex;
+  margin-bottom: 64px;
+  align-items: center;
+}
+
+.list-albums__link {
+  text-decoration: none;
+  margin-bottom: 32px;
+}
+
+.list-albums__link:hover {
+  box-shadow: 6px 7px 17px 3px rgb(6 6 6 / 38%);
+}
+
+.list-album {
+  padding-top: 64px;
+  background: linear-gradient(81deg, #ddb35f, #7409c7);
+}
+
+
+.app__title-albums {
+  color: #fff;
+}
+
+.main__photos {
+  height: 100vh;
+}
+
+.photos {
+    padding-top: 64px
+}
+
+.photos-alist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.photos-alist__item img{
+  width: 200px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.photos__title {
+  margin-bottom: 12px;
+}
+
+.photos-alist__item {
+  list-style: none;
+}
