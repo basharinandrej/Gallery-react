@@ -20,7 +20,6 @@ class ListAuthor extends React.Component {
     }
 
     render() {
-        console.log('this.props', this.props)
         return (
             <div className="body__app app">
                 <div className="container">

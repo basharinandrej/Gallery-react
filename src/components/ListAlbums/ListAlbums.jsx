@@ -1,24 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 
 
 import ListAlbumItem from './ListAlbumsItem/ListAlbumItem'
-import { fetchAlbum } from '../../redux/actions/action'
+import { fetchAlbum, actionPrevPage } from '../../redux/actions/action'
+import ButtonPrev from '../UI/ButtonPrev'
 
 
 
 class ListAlbums extends React.Component {
 
 
-
     componentDidMount() {
-        this.props.fetchAlbum()
+        this.props.actionPrevPage(this.props.location.pathname)
     }
 
-
+   
 
     render() {
+
         let currentPageId = +this.props.match.params.id 
         let nameAuthors =  this.props.authors[currentPageId - 1].username
 
@@ -27,9 +27,9 @@ class ListAlbums extends React.Component {
                 <div className="container">
 
                     <div className="app__wrapper-title">
-                        <NavLink to="/" className="app__link-prev">
+                        <ButtonPrev to="/">
                             Назад
-                        </NavLink>
+                        </ButtonPrev>
                         <h2 className="app__title-albums">
                             { currentPageId } - { nameAuthors }
                         </h2>
@@ -64,7 +64,10 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchAlbum: () => {
             dispatch(fetchAlbum())
-        }
+        },
+        actionPrevPage: url => [
+            dispatch(actionPrevPage(url))
+        ]
     }
 }
 

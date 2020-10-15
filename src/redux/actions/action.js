@@ -2,7 +2,8 @@ import  {
             FETCH_START,
             FETCH_AUTHORS_SUCCESS,
             FETCH_ERROR,
-            FETCH_ALBUM_SUCCESS
+            FETCH_ALBUM_SUCCESS, 
+            PREV_PAGE
         } from './actionTypes'
 
 
@@ -11,7 +12,7 @@ export const fetchAuthors = () => {
         dispatch(fetchStart())
 
         try {
-            await fetch('https://jsonplaceholder.typicode.com/users/?_limit=3').then(response => {
+            await fetch('https://jsonplaceholder.typicode.com/users').then(response => {
                 return response.json()
             }).then(json => {
 
@@ -75,5 +76,12 @@ export const fetchError = e => {
     return {
         type: FETCH_ERROR,
         payload: e
+    }
+}
+
+export const actionPrevPage = url => {
+    return {
+        type: PREV_PAGE,
+        payload: url
     }
 }

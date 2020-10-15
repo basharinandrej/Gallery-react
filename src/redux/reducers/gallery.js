@@ -1,12 +1,14 @@
 import { FETCH_AUTHORS_SUCCESS,
         FETCH_START,
-        FETCH_ALBUM_SUCCESS } 
+        FETCH_ALBUM_SUCCESS,
+        PREV_PAGE } 
         from '../actions/actionTypes'
 
 const initialState = {
     authors: [],
     album: [],
-    isLoading: false
+    isLoading: false,
+    prevPage: null
 }
 
 export const gallery = (state = initialState, action) => {
@@ -27,7 +29,11 @@ export const gallery = (state = initialState, action) => {
                 ...state,
                 album: action.json
             }
-
+        case PREV_PAGE:
+            return {
+                ...state,
+                prevPage: action.payload
+            }
 
 
 
